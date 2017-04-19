@@ -3,7 +3,7 @@ var express = require("express"),
 var engines = require('consolidate');
 
 
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/Public');
 app.engine('html', engines.mustache);
 app.set('view engine', 'html');
 
