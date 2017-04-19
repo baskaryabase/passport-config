@@ -2,7 +2,7 @@ var express = require("express"),
     app     = express(),
     ejs     = require("ejs"); 
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/Public'));
 
 app.get("/", function(req, res){
     
