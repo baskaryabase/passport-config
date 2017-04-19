@@ -1,6 +1,5 @@
 var express = require("express"),
-    app     = express(),
-    port    = procss.env.PORT || 8000;
+    app     = express();
 
 app.use(express.static(__dirname + '/public'));
 
@@ -10,7 +9,7 @@ app.get("/", function(req, res){
     
 });
 
-app.listen(port, function(){
+app.listen(process.env.PORT, function(){
     console.log("started");
     
 });
