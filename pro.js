@@ -1,5 +1,9 @@
 var express = require("express"),
     app     = express();
+var engines = require('consolidate');
+
+
+app.engine('html', engines.mustache);
 
 app.use(express.static(__dirname + '/public'));
 
