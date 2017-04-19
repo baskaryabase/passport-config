@@ -1,19 +1,15 @@
 var express = require("express"),
-    app     = express();
-var engines = require('consolidate');
+    app     = express(),
+    ejs     = require("ejs"); 
 
-
-app.set('views', __dirname + '/Public');
-app.engine('html', engines.mustache);
-app.set('view engine', 'html');
+app.use(express.static(__dirname + '/public'));
 
 app.get("/", function(req, res){
     
-    res.render("index.html");
+    res.render(index.ejs);
     
 });
 
-app.listen(process.env.PORT, function(){
+app.listen(process.env.PORT || 8000, function(){
     console.log("started");
-    
-});
+ });
