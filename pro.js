@@ -3,9 +3,9 @@ var express = require("express"),
 var engines = require('consolidate');
 
 
+app.set('views', __dirname + '/views');
 app.engine('html', engines.mustache);
-
-app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'html');
 
 app.get("/", function(req, res){
     
