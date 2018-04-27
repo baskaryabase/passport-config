@@ -8,7 +8,8 @@
 
 ### passport for auth<br/>
 
-`passport.authenticate("local",{successRedirect:"/",`<br/>`successFlash:"successfully signed in",`<br/> `failureRedirect:"/"`,<br/> `failureFlash:"error signing in"})`
+`passport.authenticate("local",{`<br/>
+`successRedirect:"/",`<br/>`successFlash:"successfully signed in",`<br/> `failureRedirect:"/"`,<br/> `failureFlash:"error signing in"})`
 
 ### passport for session management
 
@@ -27,7 +28,11 @@
 ### passport for jwt token based authentication without session
 
 * jwt authenticate
-  `passport.authenticate("jwt",{successRedirect:"/",<br/> successFlash:"successfully signed in",<br/> failureRedirect:"/",<br/> failureFlash:"error signing in"})`
+  `passport.authenticate("jwt",`<br/>
+  `{successRedirect:"/",`<br/>
+  `successFlash:"successfully signed in",`<br/>
+  `failureRedirect:"/",`<br/>
+  `failureFlash:"error signing in"})`
 
 ### creating strategy with passport
 
