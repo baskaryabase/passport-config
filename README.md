@@ -10,17 +10,17 @@
    `passport.authenticate("local",{successRedirect:"/",successFlash:"successfully signed       in",failureRedirect:"/",failureFlash:"error signing in"})`
 
 ### passport for session management
-- initialize passport
+- initialize passport<br/>
     `app.use(passport.initialize());`
-- init session
+- init session<br/>
     `app.use(passport.session());`
     
 ### passport for serialize and deserialize user for the session
-- serialize user
+- serialize user<br/>
     `passport.serializeUser(function(user, done) {
        done(null, user);
      });`
-- deserialize user
+- deserialize user<br/>
      `passport.deserializeUser(function(user, done) {
        done(null, false);
      });`
