@@ -8,7 +8,7 @@
 
 ### passport for auth<br/>
 
-`passport.authenticate("local",{successRedirect:"/",<br/> successFlash:"successfully signed in",<br/> failureRedirect:"/",<br/> failureFlash:"error signing in"})`
+`passport.authenticate("local",{successRedirect:"/",`<br/>`successFlash:"successfully signed in",`<br/> `failureRedirect:"/"`,<br/> `failureFlash:"error signing in"})`
 
 ### passport for session management
 
@@ -34,29 +34,29 @@
 * local strategy
   `const localOption = { usernameField: "email" };`
 
-  `const localLogin = new LocalStrategy(localOption, function(
-  email,
-  password,
-  done
-  ) {
-  User.findOne({ email: email }, function(err, user) {
-  if (err) {
-  return done(err);
-  }
-  if (!user) {
-  return done(null, false);
-  }
+  `const localLogin = new LocalStrategy(localOption, function(`<br/>
+  `email,`<br/>
+  `password,`<br/>
+  `done`<br/>
+  `) {`<br/>
+  `User.findOne({ email: email }, function(err, user) {`<br/>
+  `if (err) {`<br/>
+  `return done(err);`<br/>
+  `}`<br/>
+  `if (!user) {`<br/>
+  `return done(null, false);`<br/>
+  `}`<br/>
 
-  user.comparePassword(password, function(err, isMatch) {
-  if (err) {
-  return done(null);
-  }
-  if (!isMatch) {
-  return done(null, false);
-  }
+`user.comparePassword(password, function(err, isMatch) {`<br/>
+`if (err) {`<br/>
+`return done(null);`<br/>
+`}`<br/>
+`if (!isMatch) {`<br/>
+`return done(null, false);`<br/>
+`}`<br/>
 
-  return done(null, user);
-  });
+`return done(null, user);`<br/>
+`});`<br/>
 
-  });
-  });`
+`});`<br/>
+`});`
