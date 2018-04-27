@@ -31,7 +31,7 @@
 
 ### creating strategy with passport
 
-* local strategy
+* local strategy <br/>
   `const localOption = { usernameField: "email" };`
 
   `const localLogin = new LocalStrategy(localOption, function(`<br/>
@@ -47,16 +47,39 @@
   `return done(null, false);`<br/>
   `}`<br/>
 
-`user.comparePassword(password, function(err, isMatch) {`<br/>
-`if (err) {`<br/>
-`return done(null);`<br/>
-`}`<br/>
-`if (!isMatch) {`<br/>
-`return done(null, false);`<br/>
-`}`<br/>
+  `user.comparePassword(password, function(err, isMatch) {`<br/>
+  `if (err) {`<br/>
+  `return done(null);`<br/>
+  `}`<br/>
+  `if (!isMatch) {`<br/>
+  `return done(null, false);`<br/>
+  `}`<br/>
 
-`return done(null, user);`<br/>
-`});`<br/>
+  `return done(null, user);`<br/>
+  `});`<br/>
 
-`});`<br/>
-`});`
+  `});`<br/>
+  `});`
+
+* jwt strategy <br/>
+  `const jwtOptions = {`<br/>
+  `jwtFromRequest: ExtractJwt.fromHeader("authorization"),`<br/>
+  `secretOrKey: config.secret`<br/>  
+  `};`
+
+  `const jwtLogin = new jwtStrategy(jwtOptions, function(payload, done) {`<br/>  
+   `User.findById(payload.sub, function(err, user) {`<br/>  
+   `if (err) {`<br/>  
+   `return done(err, false);`<br/>
+  `}`<br/>
+  `if (new Date() <= payload.iat + 6000) {`<br/>
+  `if (user) {`<br/>
+  `return done(null, user);`<br/>
+  `} else {`<br/>
+  `return done(null, false);`<br/>
+  `}`<br/>
+  `} else {`<br/>
+  `return done(null, false);`<br/>
+  `}`<br/>
+  `});`<br/>
+  `});`<br/>
