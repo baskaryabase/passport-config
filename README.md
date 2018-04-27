@@ -7,20 +7,20 @@
 - creating strategy with passport
 
 ### passport for auth<br/>
-   `passport.authenticate("local",{successRedirect:"/",successFlash:"successfully signed in",failureRedirect:"/",failureFlash:"error signing in"})`
+   `passport.authenticate("local",{successRedirect:"/",successFlash:"successfully signed       in",failureRedirect:"/",failureFlash:"error signing in"})`
 
 ### passport for session management
-    - initialize passport
+- initialize passport
     `app.use(passport.initialize());`
-    - init session
+- init session
     `app.use(passport.session());`
     
 ### passport for serialize and deserialize user for the session
-    - serialize user
+- serialize user
     `passport.serializeUser(function(user, done) {
        done(null, user);
      });`
-     - deserialize user
+- deserialize user
      `passport.deserializeUser(function(user, done) {
        done(null, false);
      });`
