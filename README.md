@@ -9,7 +9,7 @@
 ### passport for auth<br/>
 
 `passport.authenticate("local",{`<br/>
-`successRedirect:"/",`<br/>`successFlash:"successfully signed in",`<br/> `failureRedirect:"/"`,<br/> `failureFlash:"error signing in"})`
+`successRedirect:"/",`<br/>`successFlash:"successfully signed in",`<br/> `failureRedirect:"/"`,<br/> `failureFlash:"error signing in"`<br/>`})`
 
 ### passport for session management
 
