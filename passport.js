@@ -70,7 +70,6 @@ const userLocalLogin = new LocalStrategy(userLocalOption, function(
     if (!user) {
       return done(null, false);
     }
-
     const isMatch = user.comparePassword(password);
     if (isMatch) {
       return done(null, user);
