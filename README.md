@@ -32,7 +32,7 @@
   `{successRedirect:"/",`<br/>
   `successFlash:"successfully signed in",`<br/>
   `failureRedirect:"/",`<br/>
-  `failureFlash:"error signing in"})`
+  `failureFlash:"error signing in"`<br/>`})`
 
 ### creating strategy with passport
 
