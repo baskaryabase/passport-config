@@ -80,5 +80,6 @@ const userLocalLogin = new LocalStrategy(userLocalOption, function(
 });
 
 passport.use("jwt", jwtLogin);
+
 passport.use("local", localLogin);
 passport.use("user-local-login", userLocalLogin);
